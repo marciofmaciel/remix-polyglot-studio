@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Polyglot Studio",
+  "description": "A professional simultaneous translation studio using Gemini 2.5 Live API for fluid cross-language conversations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

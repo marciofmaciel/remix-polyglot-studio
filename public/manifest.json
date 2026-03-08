@@ -1,0 +1,32 @@
+
+
+{
+  "short_name": "Polyglot",
+  "name": "Polyglot Studio AI",
+  "description": "A professional simultaneous translation studio using Gemini 2.5 Live API for fluid cross-language conversations.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2885/2885417.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "https://remix-polyglot-studio-507648043151.us-west1.run.app",
+  "start_url": "https://remix-polyglot-studio-507648043151.us-west1.run.app/",
+  "display": "standalone",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "orientation": "portrait",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "https://i.imgur.com/MsnVeoW.png",
+      "sizes": "307x579",
+      "type": "image/png",
+      "platform": "narrow"
+    }
+  ],
+  "categories": ["business","education", "travel"]
+
+}
