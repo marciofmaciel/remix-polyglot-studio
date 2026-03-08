@@ -1,12 +1,9 @@
 
-    [
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "app.run.us_west1.remix_polyglot_studio_507648043151.twa",
-      "sha256_cert_fingerprints":
-        ["BF:F0:9E:CC:F4:8C:EC:8B:30:C9:70:64:7A:3A:32:61:8B:9A:50:61:28:25:65:1F:C1:19:D1:34:78:82:77:0C"]
-    }
-  }
-]
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.run.us_west1.remix_polyglot_studio_507648043151.twa",
+        "sha256_cert_fingerprints": ["E4:B7:78:41:FB:1C:BA:36:3B:2D:49:E7:8A:8A:A1:0F:2A:96:84:90:E9:37:58:C6:F5:0C:3F:D1:9E:9B:89:03"]
+      }
+    }]
