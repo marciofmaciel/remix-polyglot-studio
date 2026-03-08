@@ -1,9 +1,8 @@
-
 [{
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
         "package_name": "app.run.us_west1.remix_polyglot_studio_507648043151.twa",
-        "sha256_cert_fingerprints": ["E4:B7:78:41:FB:1C:BA:36:3B:2D:49:E7:8A:8A:A1:0F:2A:96:84:90:E9:37:58:C6:F5:0C:3F:D1:9E:9B:89:03"]
+        "sha256_cert_fingerprints": ["18:83:28:5B:8D:82:40:CE:34:03:D5:38:B9:F1:EE:B8:88:40:63:70:A5:E0:8B:A6:1C:0F:19:CD:D4:CE:61:7D"]
       }
     }]
