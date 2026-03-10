@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const [langA, setLangA] = useState<Language>(SUPPORTED_LANGUAGES[2]); // Português
   const [langB, setLangB] = useState<Language>(SUPPORTED_LANGUAGES[1]); // English
   
-  const t = getTranslation(langA.code);
+  const t = useMemo(() => getTranslation(langA.code), [langA.code]);
   const [isConnected, setIsConnected] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState<string | null>(null);
