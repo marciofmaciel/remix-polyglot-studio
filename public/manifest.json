@@ -1,8 +1,8 @@
 
 
 {
-  "short_name": "Polyglot",
-  "name": "Polyglot Studio AI",
+  "short_name": "POLYGLOT",
+  "name": "POLYGLOT",
   "description": "A professional simultaneous translation studio using Gemini 2.5 Live API for fluid cross-language conversations.",
   "icons": [
     {

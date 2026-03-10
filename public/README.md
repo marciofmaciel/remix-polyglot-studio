@@ -133,11 +133,6 @@ The application does not record, store, or send audio to its own servers.
 Voice processing may occur locally on the device or through third party services (such as speech recognition APIs), depending on the operating system configuration.
 No recordings are kept after the exercise ends.
 3. How the Data Is Used
-The collected data is used to:
-•	Enable speech related features
-•	Improve speech recognition accuracy
-•	Enhance the user experience
-•	Ensure app stability and compatibility
 Polyglot does not sell or share personal data with third parties for commercial purposes.
 4. Third Party Services
 The application may use services such as:

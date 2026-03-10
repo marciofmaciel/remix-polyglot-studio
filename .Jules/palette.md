@@ -1,3 +1,0 @@
-## 2024-03-10 - Custom Components Hiding Accessibility Needs
-**Learning:** Highly styled custom Tailwind components (like the giant capture buttons and complex select menus) often lack native focus indicators and screen reader labels because the visual design overrides default browser behavior. This creates a pattern where the most visually prominent elements are the least accessible to keyboard/screen reader users.
-**Action:** When auditing visually complex interfaces, prioritize checking keyboard focus states (`focus-visible`) and ensuring semantic connections (`htmlFor`/`id`, `aria-label`, `aria-pressed`) on custom interactive elements.
