@@ -54,9 +54,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     getDevices();
-    const handleDeviceChange = () => getDevices();
-    navigator.mediaDevices?.addEventListener('devicechange', handleDeviceChange);
-    return () => navigator.mediaDevices?.removeEventListener('devicechange', handleDeviceChange);
+    navigator.mediaDevices?.addEventListener('devicechange', getDevices);
+    return () => navigator.mediaDevices?.removeEventListener('devicechange', getDevices);
   }, [getDevices]);
 
   const initAudio = async () => {
