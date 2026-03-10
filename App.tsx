@@ -277,7 +277,7 @@ Priority: Ultra-low latency. Ignore background noise and non-speech sounds.`;
             <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-blue-400 animate-pulse shadow-[0_0_8px_#60a5fa]' : 'bg-slate-700'}`}></div>
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{isConnected ? t.synchronized : t.offline}</span>
           </div>
-          <button onClick={isConnected ? handleStop : handleStart} disabled={isConnecting} className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all border-b-2 ${isConnected ? 'bg-slate-800 text-slate-400 border-slate-900 active:border-b-0 translate-y-0 active:translate-y-0.5' : 'bg-blue-600 text-white border-blue-800 shadow-lg shadow-blue-900/20 active:border-b-0 active:translate-y-0.5'}`}>
+          <button onClick={isConnected ? handleStop : handleStart} disabled={isConnecting} className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all border-b-2 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus:outline-none ${isConnected ? 'bg-slate-800 text-slate-400 border-slate-900 active:border-b-0 translate-y-0 active:translate-y-0.5' : 'bg-blue-600 text-white border-blue-800 shadow-lg shadow-blue-900/20 active:border-b-0 active:translate-y-0.5'}`}>
             {isConnecting ? t.connecting : isConnected ? t.disconnect : t.connect}
           </button>
         </div>
@@ -293,14 +293,14 @@ Priority: Ultra-low latency. Ignore background noise and non-speech sounds.`;
               </h2>
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <label className="text-[9px] font-black text-slate-400 uppercase ml-1">{t.languageA}</label>
-                  <select className="w-full bg-slate-900 border border-slate-700/50 rounded-2xl px-4 py-3 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer" disabled={isConnected} value={langA.code} onChange={(e) => setLangA(SUPPORTED_LANGUAGES.find(l => l.code === e.target.value)!)}>
+                  <label htmlFor="languageA" className="text-[9px] font-black text-slate-400 uppercase ml-1">{t.languageA}</label>
+                  <select id="languageA" className="w-full bg-slate-900 border border-slate-700/50 rounded-2xl px-4 py-3 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" disabled={isConnected} value={langA.code} onChange={(e) => setLangA(SUPPORTED_LANGUAGES.find(l => l.code === e.target.value)!)}>
                     {SUPPORTED_LANGUAGES.map(l => <option key={l.code} value={l.code}>{l.flag} {t.languages[l.code] || l.name}</option>)}
                   </select>
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[9px] font-black text-slate-400 uppercase ml-1">{t.languageB}</label>
-                  <select className="w-full bg-slate-900 border border-slate-700/50 rounded-2xl px-4 py-3 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer" disabled={isConnected} value={langB.code} onChange={(e) => setLangB(SUPPORTED_LANGUAGES.find(l => l.code === e.target.value)!)}>
+                  <label htmlFor="languageB" className="text-[9px] font-black text-slate-400 uppercase ml-1">{t.languageB}</label>
+                  <select id="languageB" className="w-full bg-slate-900 border border-slate-700/50 rounded-2xl px-4 py-3 text-xs font-bold focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" disabled={isConnected} value={langB.code} onChange={(e) => setLangB(SUPPORTED_LANGUAGES.find(l => l.code === e.target.value)!)}>
                     {SUPPORTED_LANGUAGES.map(l => <option key={l.code} value={l.code}>{l.flag} {t.languages[l.code] || l.name}</option>)}
                   </select>
                 </div>
@@ -407,7 +407,9 @@ Priority: Ultra-low latency. Ignore background noise and non-speech sounds.`;
             <button
               onClick={() => toggleSpeaking('A')}
               disabled={!isConnected || (activeSpeaker !== null && activeSpeaker !== 'A') || isProcessing || isAudioPlaying}
-              className={`relative overflow-hidden group flex flex-col items-center justify-center rounded-[3.5rem] transition-all border-b-[12px] duration-150 active:border-b-0 active:translate-y-2 ${
+              aria-label={`${t.capture} ${t.languages[langA.code] || langA.name}`}
+              aria-pressed={activeSpeaker === 'A'}
+              className={`relative overflow-hidden group flex flex-col items-center justify-center rounded-[3.5rem] transition-all border-b-[12px] duration-150 active:border-b-0 active:translate-y-2 focus-visible:ring-4 focus-visible:ring-blue-500 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900 focus:outline-none ${
                 activeSpeaker === 'A' 
                 ? 'bg-red-600 border-red-800 shadow-[0_0_100px_rgba(220,38,38,0.4)] animate-pulse-border' 
                 : 'bg-slate-800 border-slate-950 hover:bg-slate-700 shadow-2xl'
@@ -434,7 +436,9 @@ Priority: Ultra-low latency. Ignore background noise and non-speech sounds.`;
             <button
               onClick={() => toggleSpeaking('B')}
               disabled={!isConnected || (activeSpeaker !== null && activeSpeaker !== 'B') || isProcessing || isAudioPlaying}
-              className={`relative overflow-hidden group flex flex-col items-center justify-center rounded-[3.5rem] transition-all border-b-[12px] duration-150 active:border-b-0 active:translate-y-2 ${
+              aria-label={`${t.capture} ${t.languages[langB.code] || langB.name}`}
+              aria-pressed={activeSpeaker === 'B'}
+              className={`relative overflow-hidden group flex flex-col items-center justify-center rounded-[3.5rem] transition-all border-b-[12px] duration-150 active:border-b-0 active:translate-y-2 focus-visible:ring-4 focus-visible:ring-blue-500 focus-visible:ring-offset-4 focus-visible:ring-offset-slate-900 focus:outline-none ${
                 activeSpeaker === 'B' 
                 ? 'bg-red-600 border-red-800 shadow-[0_0_100px_rgba(220,38,38,0.4)] animate-pulse-border' 
                 : 'bg-slate-800 border-slate-950 hover:bg-slate-700 shadow-2xl'
